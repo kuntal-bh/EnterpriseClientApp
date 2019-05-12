@@ -1,0 +1,26 @@
+﻿@model EnterpriseClientApp.Models.ViewModel
+
+@{
+    ViewData["Title"] = "About";
+}
+
+<h2>About</h2>
+
+<ul>
+    @foreach (var item in Model.NewsArr)
+    {
+
+        <li>@item</li>
+
+
+    }
+</ul>
+<ul>
+    @foreach (var item in Model.ReceipeArr)
+    {
+
+        <li>@item</li>
+
+
+    }
+</ul>
