@@ -39,7 +39,7 @@ namespace EnterpriseClientApp.Services
                 var credentials = new ClientCredential(clientId, clientSecret);
                 var authResult = await authContext.AcquireTokenAsync(resourceIdforNewsAPI, credentials);
                 var accessToken = authResult.AccessToken;
-                this.httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "a8c2d6487c2e4441b36f67c2c0578748");
+                this.httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "5e826194a034461f93a655e49f83973b");
                 this.httpClient.DefaultRequestHeaders.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
                 tokenset = true;

@@ -29,34 +29,16 @@ namespace EnterpriseClientApp.Controllers
         public async Task<IActionResult> About()
         {
             var news = await this.apiClient.GetValuesforNews();
-            var receipe = await this.receipeAPIClient.GetValuesforNews();
+           // var receipe = await this.receipeAPIClient.GetValuesforNews();
             var viewModel = new ViewModel
             {
                 NewsArr = news,
-                ReceipeArr = receipe
+               // ReceipeArr = receipe
 
             };
             return View(viewModel);
         }
 
-        public IActionResult Contact()
-        {
-           
-            return View();
-
-          
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [AllowAnonymous]
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+       
     }
 }
