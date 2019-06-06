@@ -4,17 +4,25 @@
     ViewData["Title"] = "About";
 }
 
-<h2>About</h2>
+<h2>News Articles For Insurance</h2>
 
-<ul>
+
     @foreach (var item in Model.NewsArr)
     {
 
-        <li>@item</li>
+    <div class="media">
+        <div class="media-left">
+            <a href="@item.url">
+                <img class="media-object" style="width:150px ; height: 150px;" src="@item.urlToImage" alt="@item.url">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">@item.title</h4>
+            <p>@item.content</p>
+            <button class="btn btn-primary btn-lg">Save as Favourites</button>
+        </div>
+    </div>
 
 
     }
-</ul>
-<ul>
-  
-</ul>
+

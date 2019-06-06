@@ -7,7 +7,7 @@ namespace EnterpriseClientApp.Models
 {
     public class ViewModel
     {
-        public string[] NewsArr { get; set; }
+        public Articles[] NewsArr { get; set; }
         public string[] ReceipeArr { get; set; }
     }
 }

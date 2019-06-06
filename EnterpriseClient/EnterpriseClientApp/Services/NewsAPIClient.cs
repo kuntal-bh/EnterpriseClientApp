@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using EnterpriseClientApp.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Newtonsoft.Json;
 using System;
@@ -46,7 +47,7 @@ namespace EnterpriseClientApp.Services
             }
         }
 
-        public async Task<string[]> GetValuesforNews()
+        public async Task<Articles[]> GetValuesforNews()
         {
             await SetTokenforNews();
             var res = await this.httpClient.GetAsync("/NewsAPI/api/Values");
@@ -57,7 +58,7 @@ namespace EnterpriseClientApp.Services
             }
 
             var content = await res.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<string[]>(content);
+            return JsonConvert.DeserializeObject<Articles[]>(content);
         }
     }
 }
